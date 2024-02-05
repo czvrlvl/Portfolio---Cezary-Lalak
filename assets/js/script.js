@@ -1,16 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Pobierz referencje do modalu, przycisku akceptacji i body
-    var modal = document.querySelector(".modal");
+    var modal = document.getElementById("privacyPolicyModal");
     var acceptButton = document.getElementById("acceptButton");
+    var body = document.body;
 
-    // Funkcja do pokazania modala
+    // Funkcja do pokazania modala i zablokowania scrolla
     function showModal() {
         modal.style.display = "flex";
+        body.style.overflow = "hidden";
     }
 
-    // Funkcja do ukrycia modala
+    // Funkcja do ukrycia modala i odblokowania scrolla
     function hideModal() {
         modal.style.display = "none";
+        body.style.overflow = "auto";
     }
 
     // Pokaż modal po załadowaniu strony

@@ -23,3 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('privacyAccepted', 'true');
     });
 });
+function resetPrivacyPolicy() {
+    localStorage.removeItem('privacyAccepted');
+}
+
+// Wywołaj tę funkcję, aby zresetować akceptację polityki prywatności
+resetPrivacyPolicy();

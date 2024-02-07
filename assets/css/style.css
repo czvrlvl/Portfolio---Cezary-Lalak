@@ -204,6 +204,9 @@ img {
 .popup a:hover {
     background-color: var(--color-brand2);
 }
+body.no-scroll {
+        overflow: hidden;
+    }
 .modal {
     display: none;
     position: fixed;

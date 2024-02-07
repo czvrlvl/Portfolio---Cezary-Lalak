@@ -1,25 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var modal = document.getElementById('privacyPolicyModal');
-    var acceptButton = document.getElementById('acceptButton');
 
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById("privacyPolicyModal");
+    var acceptButton = document.getElementById("acceptButton");
 
-    var privacyAccepted = localStorage.getItem('privacyAccepted');
-
-
-    if (!privacyAccepted) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; 
+    function showModal() {
+        modal.style.display = "flex";
+        document.body.classList.add("no-scroll");
     }
 
+    function hideModal() {
+        modal.style.display = "none";
+        document.body.classList.remove("no-scroll");
+    }
 
-    acceptButton.addEventListener('click', function () {
+    var privacyAccepted = localStorage.getItem("privacyAccepted");
 
-        modal.style.display = 'none';
+    if (!privacyAccepted) {
+        showModal();
+    }
 
-
-        document.body.style.overflow = 'auto'; 
-
-
-        localStorage.setItem('privacyAccepted', 'true');
+    acceptButton.addEventListener("click", function() {
+        hideModal();
+        localStorage.setItem("privacyAccepted", "true");
     });
 });

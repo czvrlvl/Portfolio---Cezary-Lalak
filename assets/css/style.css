@@ -201,7 +201,6 @@ img {
     font-weight: 700;
     border-radius: 5px;
 }
-
 .popup a:hover {
     background-color: var(--color-brand2);
 }

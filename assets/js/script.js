@@ -1,26 +1,25 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Pobierz referencje do modalu, przycisku akceptacji i body
-    var modal = document.querySelector(".modal");
-    var acceptButton = document.getElementById("acceptButton");
+document.addEventListener("DOMContentLoaded", function () {
+    var modal = document.getElementById('privacyPolicyModal');
+    var acceptButton = document.getElementById('acceptButton');
 
-    // Funkcja do pokazania modala
-    function showModal() {
-        modal.style.display = "flex";
+
+    var privacyAccepted = localStorage.getItem('privacyAccepted');
+
+
+    if (!privacyAccepted) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; 
     }
 
-    // Funkcja do ukrycia modala
-    function hideModal() {
-        modal.style.display = "none";
-    }
 
-    // Pokaż modal po załadowaniu strony
-    showModal();
+    acceptButton.addEventListener('click', function () {
 
-    // Dodaj obsługę kliknięcia przycisku akceptacji
-    acceptButton.addEventListener("click", function() {
-        // Tutaj możesz dodać dodatkowe działania po zaakceptowaniu, jeśli są potrzebne
+        modal.style.display = 'none';
 
-        // Ukryj modal
-        hideModal();
+
+        document.body.style.overflow = 'auto'; 
+
+
+        localStorage.setItem('privacyAccepted', 'true');
     });
 });
